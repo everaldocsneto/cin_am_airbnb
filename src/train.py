@@ -56,9 +56,11 @@ best_parameters = model.best_estimator_.get_params()
 for param_name in sorted(param_grid.keys()):
      print("\t%s: %r" % (param_name, best_parameters[param_name]))
 
-# Store the model and the label encoder in a pickle
+
+# Armazenar o modelo e o codificador do rótulo em um pickle
 pickle.dump(model, open('../output/model.p', 'wb'))
 pickle.dump(le, open('../output/labelencoder.p', 'wb'))
+
 
 
 
