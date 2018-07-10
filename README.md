@@ -9,7 +9,7 @@ $ git clone https://github.com/AlexandreSGV/cin_am_airbnb
 $ cd cin_am_airbnb && sudo pip3 install requirements.txt
 ```
 
-## Como rodar
+## Como executar
 
 
 ## Dependências
@@ -17,3 +17,4 @@ $ cd cin_am_airbnb && sudo pip3 install requirements.txt
 - scikit-learn
 - numpy
 - xgboost
+- pickle
