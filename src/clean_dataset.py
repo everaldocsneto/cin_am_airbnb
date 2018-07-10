@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import pandas as pd
 # from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import Imputer
@@ -79,7 +85,7 @@ data_users = fix_age(data_users) # chama a função fix_age
 
 # numeric_attribute = ['age','sum_secs_elapsed', 'ajax_refresh_subtotal', 'index', 'personalize', 'search', 'search_results', 'show']
 numeric_attribute = ['age']
-categorical_attibute = ['gender', 'signup_method', 'language', 'affiliate_channel', 'affiliate_provider', 'first_affiliate_tracked', 'signup_app', 'first_device_type', 'first_browser','season']
+categorical_attibute = ['gender', 'signup_method', 'language', 'affiliate_channel', 'affiliate_provider', 'first_affiliate_tracked', 'signup_app', 'first_device_type', 'first_browser']
 others_attribute = ['id', 'country_destination']
 
 print('pré-processando os dados...')
@@ -87,5 +93,5 @@ data_users = pre_processing_data(data_users, numeric_attribute, categorical_atti
 
 # gerar csv de saída
 print('gerando arquivo csv...')
-data_users.to_csv('users.csv', index=False)
+data_users.to_csv('../output/users_clean.csv', index=False)
 print('finish...')

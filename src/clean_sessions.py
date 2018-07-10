@@ -15,12 +15,6 @@ unique_users_ids = df['user_id'].unique()
 unique_actions = df['action'].unique()
 
 
-# print(" - - - - - - ACTIONS - - - - - - ")
-# for action in unique_actions:
-# 	print(action)
-
-
-
 # calcula limiar minimo
 limiar = df.shape[0]*percentagem
 
@@ -69,6 +63,6 @@ for user_id in unique_users_ids:
 		
 	i+=1
 	
-final_df.to_csv('../results/sessions_clean.csv')
+final_df.to_csv('../output/sessions_clean.csv')
 
 	
