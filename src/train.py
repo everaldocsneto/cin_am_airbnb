@@ -24,9 +24,9 @@ print('removendo os dados de teste...')
 dataset = dataset.dropna() # remove linhas que tem algum valor nulo; como para os dados de teste o atributo 'country_destination' estará vazio, os dados de testes serão removidos
 print('Shape dataset: ', dataset.shape)
 
-# print(dataset.columns)
-# print(dataset.index.name)
-# dataset.set_index('id', inplace=True) # define id como index do frame
+
+if(sessions == False):
+	dataset.set_index('id', inplace=True) # define id como index do frame
 id_train = dataset.index.values
 
 print('separando dados e rótulos para treinamento...')
@@ -45,8 +45,9 @@ import pickle
 XGB_model = xgb.XGBClassifier(objective='multi:softprob', subsample=0.5, colsample_bytree=0.5, seed=0) #definição do modelo
 
 # param_grid = {'max_depth': [3, 4, 5], 'learning_rate': [0.1, 0.2, 0.3 ], 'n_estimators': [30,40,50]} # incluir mais valores aqui
-param_grid = {'max_depth': [4], 'learning_rate': [0.2], 'n_estimators': [50]} # incluir mais valores aqui
-model = model_selection.GridSearchCV(estimator=XGB_model, param_grid=param_grid, scoring='accuracy', verbose=10, n_jobs=4, iid=True, refit=True, cv=2)
+# param_grid = {'max_depth': [4], 'learning_rate': [0.2], 'n_estimators': [50]} # incluir mais valores aqui
+param_grid = {'max_depth': [3,4,5], 'learning_rate': [0.1,0.2,0.3], 'n_estimators': [50]} # incluir mais valores aqui
+model = model_selection.GridSearchCV(estimator=XGB_model, param_grid=param_grid, scoring='accuracy', verbose=10, n_jobs=4, iid=True, refit=True, cv=3)
 
 model.fit(X, y)
 print("Best score: %0.3f" % model.best_score_)
