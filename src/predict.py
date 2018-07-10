@@ -20,7 +20,7 @@ id_list = test_df.index.values
 
 y_pred = model.predict_proba(test_df)
 
-#Armazenar a predição de acordo com o formato Kaggle
+#Armazenar a predição de acordo com o formato do Kaggle
 ids = []  #list of ids
 cts = []  #list of countries
 for i in range(len(id_list)):
