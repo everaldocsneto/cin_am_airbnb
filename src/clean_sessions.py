@@ -63,7 +63,7 @@ for user_id in unique_users_ids:
 
 	for action,value in actions_by_user.items():
 		if(action not in colunas_selecionadas):
-			continue;
+			continue
 		
 		final_df.loc[i, action] = value
 		
