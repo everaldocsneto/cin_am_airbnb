@@ -39,7 +39,7 @@ import pickle
 # Treinando o classificador
 XGB_model = xgb.XGBClassifier(objective='multi:softprob', subsample=0.5, colsample_bytree=0.5, seed=0) #definição do modelo
 param_grid = {'max_depth': [3, 4, 5], 'learning_rate': [0.1, 0.2, 0.3 ], 'n_estimators': [30,40,50]} #grid de parâmetros
-model = model_selection.GridSearchCV(estimator=XGB_model, param_grid=param_grid, scoring='accuracy', verbose=10, n_jobs=4, iid=True, refit=True, cv=3)
+model = model_selection.GridSearchCV(estimator=XGB_model, param_grid=param_grid, scoring='accuracy', verbose=10, n_jobs=4, iid=True, refit=True, cv=5)
 
 model.fit(X, y)
 print("melhor score: %0.3f" % model.best_score_)
