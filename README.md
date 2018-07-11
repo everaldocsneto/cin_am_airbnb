@@ -3,6 +3,12 @@
 ## Descrição
 Projeto referente a solução do desafio 'Airbnb New User Bookings' no Kaggle. Link: https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings
 
+## Integrantes
+- Alexandre Vianna (asgv@cin.ufpe.br)
+- Everaldo Neto (ecsn@cin.ufpe.br)
+- Igor Simões (isol2@cin.ufpe.br)
+- Natacha Targino (ntrsb@cin.ufpe.br)
+
 ## Instalação
 - python >= 3.x
 ```
