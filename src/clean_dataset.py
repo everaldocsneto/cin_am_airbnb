@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import pandas as pd
 # from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import Imputer
@@ -12,13 +6,10 @@ from sklearn.preprocessing import Imputer
 data_train = pd.read_csv("../input/train_users_2.csv")
 data_test = pd.read_csv("../input/test_users.csv")
 
-
-
 # merge dos conjuntos de dados
 data_users = pd.concat([data_train, data_test], sort=False)
+
 data_users.set_index('id')
-
-
 data_users.reset_index(inplace=True)
 
 # faz limpeza nos dados de idade dos usuários
@@ -32,7 +23,7 @@ def fix_age(dataset):
 
     return dataset
 
-
+# cria um atributo categórico referente a estação do ano
 def add_estacao(dataset):
     # adiciona nova coluna setando a estacao do ano de acordo com o atributo date_account_created    
     seasons = pd.DataFrame(columns=['season'])
@@ -80,12 +71,11 @@ def pre_processing_data(dataset, numeric, categorical, others):
 print('ajustando as idades...')
 data_users = fix_age(data_users) # chama a função fix_age
 
-# print('adiciona coluna de estacao do ano...')
-# data_users = add_estacao(data_users) # add a coluna de estacoes do ano
+print('adiciona coluna de estacao do ano...')
+data_users = add_estacao(data_users) # add a coluna de estacoes do ano
 
-# numeric_attribute = ['age','sum_secs_elapsed', 'ajax_refresh_subtotal', 'index', 'personalize', 'search', 'search_results', 'show']
 numeric_attribute = ['age']
-categorical_attibute = ['gender', 'signup_method', 'language', 'affiliate_channel', 'affiliate_provider', 'first_affiliate_tracked', 'signup_app', 'first_device_type', 'first_browser']
+categorical_attibute = ['gender', 'signup_method', 'language', 'affiliate_channel', 'affiliate_provider', 'first_affiliate_tracked', 'signup_app', 'first_device_type', 'first_browser', 'season']
 others_attribute = ['id', 'country_destination']
 
 print('pré-processando os dados...')
