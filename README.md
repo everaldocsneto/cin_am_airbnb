@@ -7,7 +7,7 @@ Projeto referente a solução do desafio 'Airbnb New User Bookings' no Kaggle. L
 - python >= 3.x
 ```
 $ git clone https://github.com/AlexandreSGV/cin_am_airbnb
-$ cd cin_am_airbnb && sudo pip3 install requirements.txt
+$ cd cin_am_airbnb && sudo pip3 install -rrequirements.txt
 ```
 ## Datasets
  - Devido ao tamanho dos dados do airbnb, é necessário baixar manualmente através da página do desafio: [airbnb-recruiting-new-user-bookings/data](https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings/data) e adicioná-los na pasta `input`
