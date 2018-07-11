@@ -66,7 +66,7 @@ def pre_processing_data(dataset, numeric, categorical, others):
     full_dataset = pd.concat([numeric_frame, categorical_data, others_data], axis=1)
     return full_dataset
 
-# ##################################3
+##################################
 
 print('ajustando as idades...')
 data_users = fix_age(data_users) # chama a função fix_age
